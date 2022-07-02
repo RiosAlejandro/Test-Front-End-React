@@ -1,0 +1,33 @@
+.seccionFormulario{
+    background-color: #f2f2f2;
+    padding: 2rem;
+    border: 1px solid #f2f2f2;
+}
+
+.seccionFormulario H2{
+    color: #333333;
+    font-size: 27px;
+}
+
+.formularioNew{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.inputFormulario{
+    margin-bottom: 1rem;
+    border: 1px solid rgb(204, 212, 219);
+    border-radius: 5px;
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    /*poner color al placeholder - 585858*/
+}
+
+.botonFormulario{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1.5rem;
+    color: white;
+    background-color: #000000;
+}
