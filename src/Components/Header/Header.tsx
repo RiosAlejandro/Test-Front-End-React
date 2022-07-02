@@ -1,58 +1,20 @@
-//import React from 'react';
-//import './header.css';
-
-
-/*const Header = () =>{
-
-    const carrousel = document.querySelector('.carrousel');
-    const selector = document.querySelectorAll('.selector');
-
-    
-
-    return(
-        <header className="contenedorCarrousel">
-            <div className="carrousel">
-                <div className="contenedorImagen">
-                    <p>holanda</p>
-                </div>
-                <div className="contenedorImagen">
-                    <p>holanda1</p>
-                </div>
-                <div className="contenedorImagen">
-                    <p>holanda2</p>
-                </div>
-                <div className="contenedorImagen">
-                    <p>holanda3</p>                
-                </div>
-            </div>
-
-            <ul className="selectores">
-                <li className="selector activo"></li>
-                <li className="selector"></li>
-                <li className="selector"></li>
-                <li className="selector"></li>
-            </ul>
-    </header>
-    );
-}
-
-export default Header;*/
-
-
 import React from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper React components
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-import "./header.css";
-
 // import required modules
 import { Pagination } from "swiper";
 
-export default function App() {
+import "./header.css";
+import image1 from "../../Assets/car1.jpg";
+import image2 from "../../Assets/car2.jpg";
+import image3 from "../../Assets/car3.jpg";
+import image4 from "../../Assets/car4.jpg";
+
+
+
+export default function App(imagen) {
   return (
     <>
       <Swiper
@@ -64,11 +26,17 @@ export default function App() {
         className="mySwiper"
       >
         <SwiperSlide>
-          
+        <img src={image1} alt="imagen1" />
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>
+          <img src={image2} alt="imagen2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image3} alt="imagen3" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image4} alt="imagen4" />
+        </SwiperSlide>
       </Swiper>
     </>
   );
