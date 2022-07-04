@@ -96,7 +96,7 @@ const Main = ()=> {
 
         </Swiper>
 
-            <div className='areaCarrito'>
+            <div className='areaCarrito'>{/*NO ESTA VISIBLE, POR NO ESTAR TERMINADO*/}
                 <FontAwesomeIcon icon={faCartShopping} />
                 <div className='pseudocarrito'>
                     <h3>PseudoCarrito</h3>
