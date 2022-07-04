@@ -59,3 +59,25 @@
   .swiper-pagination-bullet-active{
     background-color: #f8475f;
   }
+
+  @media (min-width: 765px){
+    .swiper-slide{
+      background-color: #000000;
+      
+    }
+    .swiper-slide img{
+      width: 50%;
+      margin-left: 50%;
+    }
+    .textoCarousel{
+      padding-left: 0;
+      text-align: start;
+      left: 0;
+      margin-left: 3rem;
+      background-color: 0;
+      opacity: 1;
+    }
+    .swiper-backface-hidden .swiper-slide{
+      background-color: #000000;
+    }
+  }

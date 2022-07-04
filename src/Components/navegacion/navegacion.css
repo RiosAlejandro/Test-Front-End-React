@@ -1,0 +1,60 @@
+.navegacion{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: baseline;
+    position: relative;
+    height: 7rem;
+}
+
+.busca{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.busca input{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0 ;
+    border-bottom: 2px solid #7a7a7a;
+}
+
+.cuenta{
+    visibility: hidden;
+}
+
+@media (min-width: 765px){
+    .navegacion{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .menu{
+        position: absolute;
+        visibility: hidden;
+    }
+    .busca{
+        position: static;
+        width: 40%;
+        margin-left: 3.5rem;
+        margin-right: 3rem;
+    }
+    .cuenta{
+        visibility: visible;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+    .cuenta p {
+        margin-left: 0.7rem;
+    }
+    .cuenta:hover{
+        cursor: pointer;
+    }
+}

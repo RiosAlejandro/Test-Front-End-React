@@ -13,6 +13,7 @@ import image3 from "../../Assets/car3.jpg";
 import image4 from "../../Assets/car4.jpg";
 
 
+//Carousel de header construido con la libreria de Swiper
 
  const Header = ()=> {
   return (
@@ -41,7 +42,7 @@ import image4 from "../../Assets/car4.jpg";
         <SwiperSlide>
           <img src={image3} alt="imagen3" />
           <div className="textoCarousel">
-            <h5>Crecimiento de tu &nbsp; &nbsp; &nbsp; &nbsp; E-commerce</h5>
+            <h5>Crecimiento de tu <br /> E-commerce</h5>
           </div>
         </SwiperSlide>
         <SwiperSlide>

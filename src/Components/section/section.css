@@ -8,6 +8,7 @@
 .seccionFormulario H2{
     color: #333333;
     font-size: 27px;
+    text-align: center;
 }
 
 .formularioNew{
@@ -31,4 +32,22 @@
     padding: 1.5rem;
     color: white;
     background-color: #000000;
+}
+
+@media (min-width: 765px){
+    .formularioNew{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .inputFormulario{
+        margin-right: 0.5rem;
+        height: 1.2rem;
+    }
+    .botonFormulario{
+        height: 1.2rem;
+        margin-bottom: 0;
+        margin: 0;
+        padding: 2rem;
+    }
 }

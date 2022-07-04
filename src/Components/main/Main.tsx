@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,9 +13,14 @@ import "./main.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
+import Vidriera from './Vidriera.js';
+import Carrito from '../carrito/carrito';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 const Main = ()=> {
 
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState<any[]>([]);//carga de api en estado
 
     const inicialUrl = "https://corebiz-test.herokuapp.com/api/v1/products";
 
@@ -31,12 +36,30 @@ const Main = ()=> {
     useEffect(() => {
         apiCorebiz(inicialUrl);
     }, []);
+
     
-    
+    const [compras, setCompras] = useState();//carga de id de productos comprados
+    const [mostrarCompras, setMostrarCompras] = useState<any[]>([]);//mostrar productos comprados
+
+    const agregarCarrito = (id) =>{
+
+        setCompras(id);
+        let fl = productos.filter(c => c.productId === compras);
+        console.log(fl);
+        let totalFiltrar = [fl, ...mostrarCompras];
+        setMostrarCompras(totalFiltrar);
+    };
+
+    //console.log(compras);
+    //console.log(productos);
+
+
+
   return (
     <main>
+        {/*Swiper para carpusel de productos*/}
         <h1>Más vendidos</h1>
-
+<hr />
         <Swiper
             slidesPerView={2}
             spaceBetween={30}
@@ -51,24 +74,20 @@ const Main = ()=> {
             className="mySwiper"
         >
             {
-                productos.map((item, key) =>(
+                productos.map((product, key) =>(
                     <SwiperSlide className='productos' key={key}>
-                        <img src={item.imageUrl} />
-                        <h5>{item.productName}</h5>
-                        <p>de {item.listPrice? item.listPrice : 30000}</p>
-                        <p>por {item.price}</p>
+                        
+                        <Vidriera key={product.id} data={product} agregarCarrito={agregarCarrito} />
                         
                     </SwiperSlide>
                 ))
             }
             {
-                productos.map((item, key) =>(
-                    <SwiperSlide className='productos'>
-                        <img src={item.imageUrl} />
-                        <h5>{item.productName}</h5>
-                        <p>de {item.listPrice? item.listPrice : 30000}</p>
-                        <p>por {item.price}</p>
-                        <button>Comprar</button>
+                productos.map((product, key) =>(
+                    <SwiperSlide className='productos' key={key}>
+                        
+                        <Vidriera key={product.id} data={product} agregarCarrito={agregarCarrito} />
+                        
                     </SwiperSlide>
                 ))
             }
@@ -77,18 +96,21 @@ const Main = ()=> {
 
         </Swiper>
 
+            <div className='areaCarrito'>
+                <FontAwesomeIcon icon={faCartShopping} />
+                <div className='pseudocarrito'>
+                    <h3>PseudoCarrito</h3>
+                    <span>
+                            {mostrarCompras.map((m) =><Carrito data={m}/>)}
+                    </span>
+                </div>
+            </div>
+        
     </main>
   )
+  
 }
 
-Main.propTypes = {
-    productId: PropTypes.number,
-    productName: PropTypes.string,
-    starts: PropTypes.number,
-    imageUrl: PropTypes.string,
-    price: PropTypes.number,
-    item: PropTypes.array,
-    productos: PropTypes.array
-}
+
 
 export default Main;

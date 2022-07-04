@@ -6,6 +6,8 @@
 
 .pie h4{
     font-size: 22px;
+    margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .pie p{
@@ -14,17 +16,30 @@
 
 .botonPie{
     display: block;
-    width: 70%;
+    width: 75%;
+    height: 2rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
-    padding: 1.5rem;
+    padding: 1rem 1rem 1.5rem 0;
     border-radius: 5px;
     border: 0;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align: center;
+}
+
+.botonPie:hover{
+    cursor: pointer;
+}
+
+.botonPie img{
+    margin-left: 0;
+    margin-right: 0.3rem;
 }
 
 .contenedorBotones{
-    margin: 1rem 0 2rem;
+    margin: 2.5rem 0 2rem;
 }
 
 .logosPie{
@@ -42,4 +57,35 @@
     width: 100%;
     height: 1rem;
     background-color: #c0c0c0;
+}
+
+hr{
+    width: 2.8rem;
+    height: 0.2rem;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    background-color: #FFFFFF;
+    border: none;
+    padding: 0.1rem;
+}
+
+.vtex{
+    display: inline;
+}
+
+.titulovtex{
+    margin-bottom: 1.1rem;
+}
+
+
+@media (min-width: 765px){
+    .pie{
+        display: flex;
+        flex-direction: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .botonPie{
+        width: 17rem;
+    }
 }
