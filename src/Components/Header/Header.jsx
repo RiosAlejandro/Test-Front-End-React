@@ -27,26 +27,26 @@ import image4 from "../../Assets/car4.jpg";
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={image1} alt="imagen1" />
+          <img className="imgHeader" src={image1} alt="imagen1" />
           <div className="textoCarousel">
             <p>¡Hola! ¿Qué es lo que buscas?</p>
             <h5>Crear o migrar tu comercio electrónico?</h5>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image2} alt="imagen2" />
+          <img className="imgHeader"  src={image2} alt="imagen2" />
           <div className="textoCarousel">
             <h5>Liderar la evolución del mercado</h5>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image3} alt="imagen3" />
+          <img className="imgHeader"  src={image3} alt="imagen3" />
           <div className="textoCarousel">
             <h5>Crecimiento de tu <br /> E-commerce</h5>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image4} alt="imagen4" />
+          <img className="imgHeader"  src={image4} alt="imagen4" />
           <div className="textoCarousel">
             <h5>Planificar el crecimiento de tu negocio</h5>
           </div>

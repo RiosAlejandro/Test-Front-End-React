@@ -1,6 +1,7 @@
+/*General*/
 .seccionFormulario{
     background-color: #f2f2f2;
-    padding: 2rem;
+    padding: 0.3rem 2rem 2rem;
     border: 1px solid #f2f2f2;
     margin-top: 2rem;
 }
@@ -11,6 +12,7 @@
     text-align: center;
 }
 
+/*Formulario*/
 .formularioNew{
     display: flex;
     flex-direction: column;
@@ -32,6 +34,10 @@
     padding: 1.5rem;
     color: white;
     background-color: #000000;
+    line-height: 10%;
+}
+.botonFormulario:hover{
+    cursor: pointer;
 }
 
 @media (min-width: 765px){
@@ -43,11 +49,13 @@
     .inputFormulario{
         margin-right: 0.5rem;
         height: 1.2rem;
+        width: 18rem;
     }
     .botonFormulario{
         height: 1.2rem;
         margin-bottom: 0;
         margin: 0;
         padding: 2rem;
+        width: 12rem;
     }
 }

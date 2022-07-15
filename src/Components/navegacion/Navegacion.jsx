@@ -2,7 +2,7 @@ import React from 'react';
 import './navegacion.css';
 import menu from '../../Assets/vectores/Icon2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
 const Navegacion = () => {
@@ -21,6 +21,9 @@ const Navegacion = () => {
 
       <div className='cuenta'><FontAwesomeIcon icon={faUser} /><p>Mi cuenta</p></div>
 
+      <div className='carritoNavegacion'>
+                <FontAwesomeIcon icon={faCartShopping} />
+      </div>
       
     </nav>
   )

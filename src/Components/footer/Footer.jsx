@@ -11,10 +11,10 @@ import logo1 from '../../Assets/vectores/Icon1.svg';
 function Footer() {
   return (
     <>
-        <footer className="pie">
-            <div>
+        <footer className="pie">{/* general*/}
+            <div>{/*informacion de contacto */}
                 <h4>Ubicación</h4>
-                <hr/>
+                <hr className='hrFooter' />
                 <p>Avenida Andrómeda, 2000. Blaco 6 e 8</p>
                 <p>Alphavile SP</p>
                 <p>brasil@corebiz.ag</p>
@@ -22,13 +22,13 @@ function Footer() {
             </div>
             
 
-            <div className="contenedorBotones">
+            <div className="contenedorBotones">{/*botones */}
                 <span className="botonPie"><img src={logo} alt='logo1' />Contáctanos</span>
 
                 <span className="botonPie"><img src={logo1} alt='logo2' />Habla con un consultor</span>
             </div>
 
-            <div className="logosPie">
+            <div className="logosPie">{/*logos, vtex y corebiz */}
                 <div className="logoPie">
                     <h5>Desarrollado por</h5>
                     <img src={logoc} alt="Corebiz pie" />

@@ -1,3 +1,4 @@
+/*general*/
 .navegacion{
     display: flex;
     flex-flow: row nowrap;
@@ -8,6 +9,7 @@
     height: 7rem;
 }
 
+/*Buscador*/
 .busca{
     position: absolute;
     bottom: 0;
@@ -24,29 +26,53 @@
     border: 0 ;
     border-bottom: 2px solid #7a7a7a;
 }
-
-.cuenta{
-    visibility: hidden;
+.busca input:focus {
+    outline:0 ;
 }
 
+/*Cuenta*/
+.cuenta{
+    visibility: hidden;
+    position: absolute;
+}
+
+/*Carrito*/
+.carritoNavegacion:hover{
+    cursor: pointer;
+}
+.fa-cart-shopping{
+    font-size: 1.5rem;
+  }
+.fa-cart-shopping:hover{
+    cursor: pointer;
+  }
+
 @media (min-width: 765px){
+    /*General*/
     .navegacion{
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
     }
+
+    /*menu*/
     .menu{
         position: absolute;
         visibility: hidden;
     }
+
+    /*Buscador*/
     .busca{
         position: static;
         width: 40%;
         margin-left: 3.5rem;
         margin-right: 3rem;
     }
+
+    /*Cuenta*/
     .cuenta{
         visibility: visible;
+        position: relative;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -56,5 +82,10 @@
     }
     .cuenta:hover{
         cursor: pointer;
+    }
+
+    /*Carrito*/
+    .carritoNavegacion{
+        margin-left: 2rem;
     }
 }

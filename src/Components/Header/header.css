@@ -1,3 +1,4 @@
+  /*generales de la libreria swiper*/
   .swiper {
     width: 100%;
     height: 20rem;
@@ -24,13 +25,15 @@
     align-items: center;
   }
   
-  .swiper-slide img {
+  /*imagenes de la portada*/
+  .swiper-slide .imgHeader {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
+  /*texto de las portadas*/
   .textoCarousel{
     position: absolute;
     color: #ffffff;
@@ -52,6 +55,7 @@
   }
 
 
+  /*paginacion*/
   .swiper-pagination-bullet{
     background-color: #bdbdbd;
   }
@@ -60,15 +64,20 @@
     background-color: #f8475f;
   }
 
+
   @media (min-width: 765px){
     .swiper-slide{
       background-color: #000000;
       
     }
+
+    /*imagenes de la portada*/
     .swiper-slide img{
       width: 50%;
       margin-left: 50%;
     }
+
+    /*texto de la portada*/
     .textoCarousel{
       padding-left: 0;
       text-align: start;

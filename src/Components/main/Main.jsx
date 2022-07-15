@@ -13,14 +13,27 @@ import "./main.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
-import Vidriera from './Vidriera.js';
+import Vidriera from './Vidriera.jsx';
 import Carrito from '../carrito/carrito';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
+import {useMediaQuery, useMediaQueries} from '@react-hook/media-query'
+
+
+  
+
 const Main = ()=> {
 
-    const [productos, setProductos] = useState<any[]>([]);//carga de api en estado
+
+    //funcion para medir cambios en tamaño de pantalla
+        const {matches, matchesAny, matchesAll} = useMediaQueries({
+          screen: 'screen',
+          width: '(min-width: 765px)'
+        });
+
+
+    const [productos, setProductos] = useState([]);//carga de api en estado
 
     const inicialUrl = "https://corebiz-test.herokuapp.com/api/v1/products";
 
@@ -35,11 +48,12 @@ const Main = ()=> {
 
     useEffect(() => {
         apiCorebiz(inicialUrl);
+        
     }, []);
 
     
     const [compras, setCompras] = useState();//carga de id de productos comprados
-    const [mostrarCompras, setMostrarCompras] = useState<any[]>([]);//mostrar productos comprados
+    const [mostrarCompras, setMostrarCompras] = useState([]);//mostrar productos comprados
 
     const agregarCarrito = (id) =>{
 
@@ -50,53 +64,47 @@ const Main = ()=> {
         setMostrarCompras(totalFiltrar);
     };
 
-    //console.log(compras);
-    //console.log(productos);
-
-
+ 
+   
 
   return (
     <main>
         {/*Swiper para carpusel de productos*/}
         <h1>Más vendidos</h1>
-<hr />
+        <hr className='hrMain' />
         <Swiper
-            slidesPerView={2}
+            slidesPerView={matches.width ? 4 : 2}
             spaceBetween={30}
-            slidesPerGroup={2}
+            slidesPerGroup={1}
             loop={true}
             loopFillGroupWithBlank={true}
             pagination={{
             clickable: true,
             }}
-            //navigation: true
+            navigation = {matches.width ? true : false}
             modules={[Pagination, Navigation]}
             className="mySwiper"
         >
             {
                 productos.map((product, key) =>(
-                    <SwiperSlide className='productos' key={key}>
+                    <SwiperSlide className='productos'>
                         
-                        <Vidriera key={product.id} data={product} agregarCarrito={agregarCarrito} />
-                        
+                        {/*<Vidriera key={key} data={product} agregarCarrito={agregarCarrito} />*/}
+                        <div className='productoMain' key={key}>
+                            <img className='imgProducto' src={product.imageUrl} alt={product.price}/>
+                            <h5>{product.productName}</h5>
+                            <p className='tachado'>de ${product.listPrice? product.listPrice : 30000}</p>
+                            <p className='precioFinal' >por ${product.price}</p>
+                            <button className='botonProducto' onClick={()=> agregarCarrito(product.productId)} >Comprar</button>
+                            </div>
                     </SwiperSlide>
                 ))
             }
-            {
-                productos.map((product, key) =>(
-                    <SwiperSlide className='productos' key={key}>
-                        
-                        <Vidriera key={product.id} data={product} agregarCarrito={agregarCarrito} />
-                        
-                    </SwiperSlide>
-                ))
-            }
-            
-            
+        
 
         </Swiper>
 
-            <div className='areaCarrito'>
+            {/*<div className='areaCarrito'>
                 <FontAwesomeIcon icon={faCartShopping} />
                 <div className='pseudocarrito'>
                     <h3>PseudoCarrito</h3>
@@ -104,7 +112,7 @@ const Main = ()=> {
                             {mostrarCompras.map((m) =><Carrito data={m}/>)}
                     </span>
                 </div>
-            </div>
+            </div>*/}
         
     </main>
   )
