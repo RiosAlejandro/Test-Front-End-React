@@ -1,21 +1,47 @@
+/*general*/
+
 .pie{
     color: #FFFFFF;
     padding: 2rem 2.5rem;
     background-color: #000000;
 }
 
+/*Informacion de contacto*/
 .pie h4{
     font-size: 22px;
     margin-bottom: 1rem;
     margin-top: 0;
 }
 
+.hrFooter{
+    width: 2.8rem;
+    height: 0.2rem;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    background-color: #FFFFFF;
+    border: none;
+    padding: 0.1rem;
+    border-radius: 22px;
+}
+
 .pie p{
     font-size: 15px;
 }
 
+
+
+/*Botones*/
+.contenedorBotones{
+    margin: 2.5rem 0 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .botonPie{
-    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
     width: 75%;
     height: 2rem;
     margin-left: auto;
@@ -38,10 +64,8 @@
     margin-right: 0.3rem;
 }
 
-.contenedorBotones{
-    margin: 2.5rem 0 2rem;
-}
 
+/*Logos, vtex y corebiz*/
 .logosPie{
     display: flex;
     flex-flow: row nowrap;
@@ -59,16 +83,6 @@
     background-color: #c0c0c0;
 }
 
-hr{
-    width: 2.8rem;
-    height: 0.2rem;
-    margin-left: 0;
-    margin-bottom: 2rem;
-    background-color: #FFFFFF;
-    border: none;
-    padding: 0.1rem;
-}
-
 .vtex{
     display: inline;
 }
@@ -78,13 +92,16 @@ hr{
 }
 
 
+
 @media (min-width: 765px){
+    /*general*/
     .pie{
         display: flex;
         flex-direction: row nowrap;
         justify-content: space-around;
         align-items: center;
     }
+    /*Botones*/
     .botonPie{
         width: 17rem;
     }
